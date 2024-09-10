@@ -15,9 +15,9 @@ const io = new Server(server, {
   },
 });
 
-app.get("/",(req,rs)=>{
-  res.json({message: "hello world"})
-})
+app.get('/home', (req, res) => {
+  res.status(200).json('Welcome, your app is working well');
+});
 
 app.use("/api/v1/user",require("./router/User"));
 server.listen(process.env.PORT,()=>{
