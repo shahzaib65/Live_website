@@ -14,6 +14,11 @@ const io = new Server(server, {
     credentials: true,
   },
 });
+
+app.get("/",(req,rs)=>{
+  res.json({message: "hello world"})
+})
+
 app.use("/api/v1/user",require("./router/User"));
 server.listen(process.env.PORT,()=>{
     console.log("Server is connected with",process.env.PORT);
